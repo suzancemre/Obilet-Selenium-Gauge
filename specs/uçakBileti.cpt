@@ -1,0 +1,43 @@
+
+------------Uçak Bileti-----------
+
+# Gidiş-Dönüş İlleri ve Tarihleri Seçilir
+* "gidisDonus" elementine tıklanır
+* Bir süre bekle
+* "neredensehirInput" elementine tıklanır
+* "neredensehirInput" elementine tıkla "Hakkari" yazini gonder
+* "ilkList" elementine tıklanır
+* Bir süre bekle
+* "nereyesehirInput" elementine tıklanır
+* "nereyesehirInput" elementine tıkla "Ankara" yazini gonder
+* Bir süre bekle
+* "ilkdonus" elementine tıklanır
+* Bir süre bekle
+* Bir süre bekle
+* Bir süre bekle
+
+
+# Gidiş-Donuş Tarihi Seçilir
+* "gdsTarihi" elementine tıklanır
+* "secTrh" elementine tıklanır
+* Value al ve sakla "trhSakla"
+* Bir süre bekle
+
+# Donuş Tarihi Seçilir
+* Bir süre bekle
+* "kapat" elementine tıklanır
+* Bir süre bekle
+* Bir süre bekle
+* "dnsTarihi" elementine tıklanır
+* Bir süre bekle
+* "ileriTrhSec" elementine tıklanır
+* Bir süre bekle
+
+# Uçuş Aranır Uçuşların Listelendiği Görülür
+* "ucusAra" elementine tıklanır
+* Bir süre bekle
+* Bir süre bekle
+* Bir süre bekle
+* Bir süre bekle
+
+

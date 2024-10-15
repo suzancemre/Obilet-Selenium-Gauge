@@ -1,0 +1,153 @@
+{
+  "popupUyeGirisi": {
+    "type": "xpath",
+    "value": "//div[@class='ob-auth']/ancestor::div[@class='ob-modal default pop ob-auth-modal open']"
+  },
+  "uyeGirisi": {
+    "type": "xpath",
+    "value": "//a[@class='login' and text()='Üye Girişi']"
+  },
+  "uyeOl": {
+    "type": "xpath",
+    "value": "//div//button[contains(text(), 'Üye Ol')]"
+  },
+  "uyeGirisYap": {
+    "type": "xpath",
+    "value": "//button[@type='button' and contains(text(), 'Giriş Yap')]"
+  },
+  "emailAln": {
+    "type": "xpath",
+    "value": "//input[@placeholder='E-posta Adresi']"
+  },
+  "sifre": {
+    "type": "xpath",
+    "value": "//input[@placeholder='Şifre']"
+  },
+  "kullaniciBilgi": {
+    "type": "xpath",
+    "value": "//div[@id='error-message-content' and text()='Bu kullanıcı sisteme daha önceden kayıt olmuştur.']"
+  },
+  "uyeGrsKntrl": {
+    "type": "xpath",
+    "value": "//a[text()='Üye Girişi']"
+  },
+  "bilgiGrsSonrasiUyeOl": {
+    "type": "xpath",
+    "value": "//button[text()='Üye Ol'']"
+  },
+  "obiletIkon": {
+    "type": "xpath",
+    "value": "//a[@aria-label='obilet.com']"
+  },
+  "ucakTb": {
+    "type": "xpath",
+    "value": "//a[@href='/ucak-bileti' and @data-event-category='Main Menu' and @data-event-action='Flight']"
+  },
+  "gidisDonus": {
+    "type": "id",
+    "value": "two-ways"
+  },
+  "neredensehirInput": {
+    "type": "xpath",
+    "value": "//input[@id='origin-input']"
+  },
+  "nereyesehirInput": {
+    "type": "xpath",
+    "value": "//input[@id='destination-input']"
+  },
+  "ilkList": {
+    "type": "xpath",
+    "value": "//li[contains(.,'Hakkari Y')]"
+  },
+  "ilkdonus": {
+    "type": "xpath",
+    "value": "//li[contains(.,'Ankara Esenboğa')]"
+  },
+  "gdsTarihi": {
+    "type": "xpath",
+    "value": "//div[@class='departure group']"
+  },
+  "dnsTarihi": {
+  "type": "xpath",
+  "value": "//div//button[@id='return-input-placeholder']"
+},
+  "kapat": {
+    "type": "id",
+    "value": "return-close"
+  },
+  "secTrh": {
+    "type": "css",
+    "value": "button.week.in.cheap"
+  },
+  "donusSec": {
+    "type": "css",
+    "value": "button[type='button'][data-date='2024-11-15'].week.in"
+  },
+  "ucusAra": {
+    "type": "xpath",
+    "value": "//button[@id='search-button']"
+  },
+  "ucusListe": {
+    "type": "id",
+    "value": "outbound-journeys"
+  },
+  "ekolu ucus": {
+    "type": "xpath",
+    "value": "//ul[@id='outbound-journeys']//li[.//span[text()='THY']]"
+  },
+  "donus": {
+    "type": "xpath",
+    "value": "//ul[@id='return-journeys']//li[.//span[text()='THY']]"
+  },
+  "donusBiletiSec": {
+    "type": "xpath",
+    "value": "(//div[contains(@class,'details')]//div[@class='title']/span[text()='Ecofly (EF)'])[2]"
+  },
+  "ekoUcs": {
+    "type": "xpath",
+    "value": "//div[contains(@class,'details')]//div[@class='title']/span[text()='Ecofly (EF)']"
+  },
+  "extraUcs": {
+    "type": "xpath",
+    "value": "//div[contains(@class,'details')]//div[@class='title']/span[text()='Extrafly (XF)']"
+  },
+  "primeUcs": {
+    "type": "xpath",
+    "value": "//div[contains(@class,'details')]//div[@class='title']/span[text()='Primefly (PF)']"
+  },
+  "businessUcs": {
+    "type": "xpath",
+    "value": "//div[contains(@class,'details')]//div[@class='title']/span[text()='Business (BU)']"
+  },
+  "odemeKontrol": {
+    "type": "xpath",
+    "value": "//label[text()='ÖDEME BİLGİLERİ']"
+  },
+  "cerezKabul": {
+  "type": "id",
+  "value": "accept"
+  },
+  "ilkSvg": {
+    "type": "xpath",
+    "value": "//ul/li[@class='item'][1][not(ancestor::div[contains(@class, 'loading-container')])]"
+  },
+  "saatSakla": {
+    "type": "xpath",
+    "value": "//div[@class='departure']"
+  },
+  "bildirimKapat": {
+  "type": "id",
+  "value": "close-button-1454703513200"
+  },
+
+  "trhSakla": {
+    "type": "xpath",
+    "value": "//ob-datepicker[@id='departure']/input"
+  },
+  "ileriTrhSec": {
+  "type": "xpath",
+  "value": "(//button[contains(@class, 'week in cheap')])[6]"
+  }
+  }
+
+
