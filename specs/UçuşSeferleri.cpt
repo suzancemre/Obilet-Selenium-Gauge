@@ -1,0 +1,24 @@
+# Uçuşların listelendiği kontrol edilir
+* "ucusListe" elementi ekranda var mı
+* "5" saniye bekle
+
+# Açılan Bildirim Kapatılır
+* "bildirimKapat" elementine tıklanır
+
+# Bilet seçimi Yapılır
+* "ekolu ucus" elementine tıklanır
+
+# Seçilen Biletin Sınıfları Kontrol Edilir
+* "ekoUcs" elementi ekranda var mı
+* "extraUcs" elementi ekranda var mı
+* "primeUcs" elementi ekranda var mı
+* "businessUcs" elementi ekranda var mı
+
+
+# Eğer ekonomik sınıf mevcutsa, "Ekonomik Sınıf" seçeneğine tıklanarak ekonomik sınıf seçilir
+* "ekoUcs" elementine tıklanır
+
+# Donus için eğer ekonomik sınıf mevcutsa, "Ekonomik Sınıf" seçeneğine tıklanarak ekonomik sınıf seçilir
+* "donus" elementine tıklanır
+* "5" saniye bekle
+* "donusBiletiSec" elementine tıklanır

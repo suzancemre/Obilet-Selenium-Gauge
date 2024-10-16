@@ -1,0 +1,38 @@
+# Kullanıcı İşlemleri
+
+# Ana sayfa açılır
+* Sayfayı aç
+* Baslık Kontrol Edilir
+
+# Üye giriş butonuna tıklanır
+* "5" saniye bekle
+* "uyeGirisi" elementine tıklanır
+
+# Üyelik pop-up'ı açılır
+* "popupUyeGirisi" elementi ekranda var mı
+
+# Üye ol butonuna tıklanır
+* "uyeOl" elementine tıklanır
+
+
+# Mail ve Password ile Login olunur
+* "5" saniye bekle
+* "emailAln" elementine tıkla "suzancemrealptekin@gmail.com" yazini gonder
+* "5" saniye bekle
+* "sifre" elementine tıkla "Z01a5.ar" yazini gonder
+* "uyeGirisYap" elementine tıklanır
+* "5" saniye bekle
+* "uyeGrsKntrl" elementi ekranda yok mu
+
+
+# Dinamik bir e-posta ve şifre ile üye olunur
+* Email Alanına rastgelee-posta gönder
+* "5" saniye bekle
+* Şifre alanına rastgele bir şifre gönder
+* "5" saniye bekle
+* "uyeOl" elementine tıklanır
+* "5" saniye bekle
+
+
+
+

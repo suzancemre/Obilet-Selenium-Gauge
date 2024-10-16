@@ -104,27 +104,6 @@ public class Element {
         }
     }
 
-    public void sendEnter(String elementName) {
-       Locator elementInfo = elements.get(elementName);
-        if (elementInfo != null) {
-            By by = getBy(elementInfo);
-            try {
-                WebElement webElement = webdriver.findElement(by);
-                if (webElement.isDisplayed()) {
-                    Actions actions = new Actions(webdriver);
-                    actions.moveToElement(webElement).click().sendKeys(Keys.ENTER).perform();
-                    System.out.println("Enter tuşu başarıyla gönderildi: " + elementName);
-                } else {
-                    System.err.println("Element görünür değil: " + elementName);
-                }
-            } catch (NoSuchElementException e) {
-                System.err.println("Element bulunamadı: " + elementName);
-            }
-        } else {
-            System.err.println("Element haritada yok: " + elementName);
-        }
-    }
-
     private String generateRandomPassword(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
         StringBuilder password = new StringBuilder();

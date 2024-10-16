@@ -44,8 +44,8 @@ public class BaseStep extends Base {
         }
     }
 
-    @Step("Saklanan value karsılaştır")
-    public void compareLastTitle() {
+    @Step("Saklanan degerin <value> oldugunu dogrula")
+    public void compareLastTitle(String value) {
         String expectedValue = "24 Ekim 2024 Perşembe";
 
         if (lastValue != null) {
@@ -75,8 +75,8 @@ public class BaseStep extends Base {
         logger.info("Beklenen ile Gerceklesen sonuc aynı");
     }
 
-    @Step({"Bir süre bekle", "wait for a while"})
-    public void waitForAWhile() {
+    @Step({"<sure> saniye bekle"})
+    public void waitForAWhile (int sure) {
         try {
             Thread.sleep(2000);
             System.out.println("2 saniye bekleniyor");
