@@ -15,15 +15,16 @@ public class Base {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         webdriver = new ChromeDriver();
+        webdriver.get("https://www.obilet.com");
         webdriver.manage().window().maximize();
-        webdriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); // İsteğe bağlı: gizli bekleme
+        webdriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 
 
     @AfterScenario
     public void exit() {
         if (webdriver != null) {
-            webdriver.quit();
+            webdriver.close();
         }
     }
 }
