@@ -112,7 +112,6 @@
             <groupId>com.thoughtworks.gauge</groupId>
             <artifactId>gauge-java</artifactId>
             <version>0.11.3</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
