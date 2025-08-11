@@ -57,6 +57,7 @@ public class BaseStep extends Base {
     public void notVisibleElement(String key) {
 
         elementManager.isNotElementVisible(key);
+        elemnet.json
         System.out.println(key + " elementi ekranda degil");
     }
 
