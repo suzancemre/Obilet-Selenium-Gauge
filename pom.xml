@@ -131,7 +131,9 @@
                     <arguments>
                         <argument>run</argument>
                         <argument>specs/</argument>
+                        <argument>--step_implementation_dirs=/Users/testinium/.jenkins/workspace/MyFirstPipeline/src/test/java/Obilet</argument>
                     </arguments>
+
 
                 </configuration>
             </plugin>
