@@ -3,8 +3,6 @@ package BaseStep;
 import ElementSource.Element;
 import Obilet.Base;
 import com.thoughtworks.gauge.Step;
-import io.qameta.allure.Allure;
-import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
@@ -22,7 +20,6 @@ public class BaseStep extends Base {
     }
 
     @Test
-    @Description("Beklenir")
     public void waitForAWhile () {
         try {
             Thread.sleep(2000);
