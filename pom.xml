@@ -143,8 +143,27 @@
                     </includes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.thoughtworks.gauge.GaugeRuntime</mainClass>
+                    <arguments>
+                        <argument>run</argument>
+                        <argument>specs/</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
 
-<!--            &lt;!&ndash; Allure Report Plugin &ndash;&gt;-->
+            <!--            &lt;!&ndash; Allure Report Plugin &ndash;&gt;-->
 <!--            <plugin>-->
 <!--                <groupId>io.qameta.allure</groupId>-->
 <!--                <artifactId>allure-maven</artifactId>-->
