@@ -131,9 +131,8 @@
                     <arguments>
                         <argument>run</argument>
                         <argument>specs/</argument>
-                        <argument>--step_implementation_dirs</argument>
-                        <argument>src/test/java/Obilet</argument>
                     </arguments>
+
                 </configuration>
             </plugin>
         </plugins>
