@@ -46,7 +46,6 @@ public class BaseStep extends Base {
         elementManager.isElementVisible(key);
         if(key!=null){
             logger.info(key + "elementine tıklandı");
-            Allure.step("Tıklanan buton: " + key);
 
         }
 
