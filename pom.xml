@@ -23,7 +23,6 @@
     </properties>
 
     <dependencies>
-        <!-- Buradaki bağımlılıklar senin verdiğin gibi devam ediyor -->
         <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -45,7 +44,7 @@
             <version>${selenium.version}</version>
         </dependency>
 
-        <!-- Selenium DevTools for Chrome 139 -->
+        <!-- Selenium DevTools -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-devtools-v128</artifactId>
@@ -137,7 +136,6 @@
                     </arguments>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>
