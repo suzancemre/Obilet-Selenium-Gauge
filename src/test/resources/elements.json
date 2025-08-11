@@ -5,7 +5,7 @@
   },
   "uyeGirisi": {
     "type": "xpath",
-    "value": "//a[@class='login' and text()='Üye Girişi']"
+    "value": "//button[@id='search-button']"
   },
   "uyeOl": {
     "type": "xpath",

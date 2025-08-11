@@ -3,80 +3,27 @@ package BaseStep;
 import ElementSource.Element;
 import Obilet.Base;
 import com.thoughtworks.gauge.Step;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Description;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BaseStep extends Base {
 
     private static final Logger logger = LoggerFactory.getLogger(BaseStep.class);
     private Element elementManager;
 
-    private String lastValue;
-    private String generateDynamicEmail() {
-        String characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-        StringBuilder username = new StringBuilder();
-        Random random = new Random();
-
-        int usernameLength = random.nextInt(6) + 5;
-        for (int i = 0; i < usernameLength; i++) {
-            username.append(characters.charAt(random.nextInt(characters.length())));
-        }
-
-        return username.toString() + "@hotmail.com";
-    }
-
     public BaseStep() {
-        setup();
         elementManager = new Element(webdriver);
     }
 
-    @Step("Value al ve sakla <elementName>")
-    public void getAttrStore(String elementName) {
-        lastValue = elementManager.getAttribute(elementName);
-        if (lastValue != null) {
-            System.out.println("Alınan value: " + lastValue);
-        } else {
-            System.err.println("Value alınamadı: " + elementName);
-        }
-    }
-
-    @Step("Saklanan degerin <value> oldugunu dogrula")
-    public void compareLastTitle(String value) {
-        String expectedValue = "24 Ekim 2024 Perşembe";
-
-        if (lastValue != null) {
-            assertEquals(lastValue, expectedValue);
-            System.out.println(expectedValue);
-            System.out.println(lastValue);
-            logger.info("Değerler eşit: Beklenen deger: " + lastValue + ", Bulunan değer: " + expectedValue);
-        } else {
-            System.err.println("Saklanan value yok.");
-        }
-    }
-
-    @Step("Sayfayı aç")
-    public void openPage() {
-        if (webdriver == null) {
-            setup();
-        }
-        webdriver.get("https://www.obilet.com/");
-    }
-
-    @Step("Baslık Kontrol Edilir")
-    public void titleControl() {
-        String actual = webdriver.getCurrentUrl();
-        String expected = "https://www.obilet.com/";
-        assertEquals(actual, expected);
-        System.out.println("Beklenen ile Gerceklesen sonuc aynı");
-        logger.info("Beklenen ile Gerceklesen sonuc aynı");
-    }
-
-    @Step({"<sure> saniye bekle"})
-    public void waitForAWhile (int sure) {
+    @Test
+    @Description("Beklenir")
+    public void waitForAWhile () {
         try {
             Thread.sleep(2000);
             System.out.println("2 saniye bekleniyor");
@@ -86,34 +33,31 @@ public class BaseStep extends Base {
     }
     @Step("<key> elementine tıklanır")
     public void clickElement(String key) {
-        elementManager.clickElement(key);
-        logger.info(key + "elementine tıklandı");
+        try {
+            elementManager.clickElement(key);
+            logger.info(key + " elementine tıklandı");
 
+        } catch (Exception e) {
+            logger.error("Element tıklanamadı: " + key, e);
+            Assertions.fail("Tıklanacak element bulunamadı: " + key);
+        }
     }
+
 
     @Step("<key> elementi ekranda var mı")
     public void visibleElement(String key) {
         elementManager.isElementVisible(key);
-        System.out.println(key + " elementi ekranda");
-    }
+        if(key!=null){
+            logger.info(key + "elementine tıklandı");
+            Allure.step("Tıklanan buton: " + key);
 
-    @Step("<key> elementi ekranda yok mu")
+        }
+
+    }
     public void notVisibleElement(String key) {
+
         elementManager.isNotElementVisible(key);
         System.out.println(key + " elementi ekranda degil");
-    }
-
-    @Step("Email Alanına rastgelee-posta gönder")
-    public void loginWithDynamicEmail() {
-        String dynamicEmail = generateDynamicEmail();
-        sendKeys("emailAln", dynamicEmail);
-
-    }
-
-    @Step("Şifre alanına rastgele bir şifre gönder")
-    public void loginWithDynamicSifre() {
-        String dynamicEmail = generateDynamicEmail();
-        sendKeys("sifre", dynamicEmail);
     }
 
     @Step( "<key> elementine tıkla <text> yazini gonder")

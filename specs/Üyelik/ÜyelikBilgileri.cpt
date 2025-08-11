@@ -1,11 +1,6 @@
-# Kullanıcı İşlemleri
-
-# Ana sayfa açılır
-* Sayfayı aç
-* Baslık Kontrol Edilir
+ Kullanıcı İşlemleri
 
 # Üye giriş butonuna tıklanır
-* "5" saniye bekle
 * "uyeGirisi" elementine tıklanır
 
 # Üyelik pop-up'ı açılır

@@ -4,10 +4,8 @@ import BaseStep.BaseStep;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.FileInputStream;
@@ -25,10 +23,12 @@ public class Element {
     private Map<String, Locator> elements;
     private static final Logger logger = LoggerFactory.getLogger(BaseStep.class);
 
+
     public Element(WebDriver webdriver) {
         this.webdriver = webdriver;
         this.elements = loadElementsFromJson("src/test/resources/elements.json");
     }
+
 
     private Map<String, Locator> loadElementsFromJson(String filePath) {
         try (Reader reader = new InputStreamReader(new FileInputStream(filePath), StandardCharsets.UTF_8)) {
@@ -84,6 +84,24 @@ public class Element {
         }
     }
 
+    public WebElement findElementByKey(String key, boolean assertFlag) {
+        Locator selectorInfo = elements.get(key);
+        if (selectorInfo == null) {
+            if (assertFlag) {
+                throw new NoSuchElementException("Element bulunamadı: " + key);
+            } else {
+                return null;
+            }
+        }
+        By by = getBy(selectorInfo);
+        try {
+            return webdriver.findElement(by);
+        } catch (NoSuchElementException e) {
+            if (assertFlag) throw e;
+            return null;
+        }
+    }
+
     public WebElement clickElement(String elementName) {
         Locator elementInfo = elements.get(elementName);
         if (elementInfo != null) {
@@ -104,37 +122,6 @@ public class Element {
         }
     }
 
-    private String generateRandomPassword(int length) {
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
-        StringBuilder password = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            int randomIndex = (int) (Math.random() * characters.length());
-            password.append(characters.charAt(randomIndex));
-        }
-        return password.toString();
-    }
-
-
-    public void sendRandomPassword() {
-        String randomPassword = generateRandomPassword(12);
-        Element.Locator passwordLocator = elements.get("passwordField");
-
-        if (passwordLocator == null) {
-            logger.error("Şifre alanı JSON'da bulunamadı.");
-            return;
-        }
-
-        try {
-            By by = getBy(passwordLocator);
-            WebElement passwordField = webdriver.findElement(by);
-            passwordField.sendKeys(randomPassword);
-            logger.info("Rastgele şifre gönderildi: " + randomPassword);
-        } catch (NoSuchElementException e) {
-            logger.error("Şifre alanı bulunamadı: " + e.getMessage());
-        } catch (IllegalArgumentException e) {
-            logger.error("Geçersiz locator türü: " + e.getMessage());
-        }
-    }
     public String getAttribute(String elementName) {
         Locator elementInfo = elements.get(elementName);
         if (elementInfo != null) {

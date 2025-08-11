@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Sayfanın başlığını kontrol edecek","415","titleControl()","","Wed Aug 06 11:34:08 GMT+03:00 2025","failed","Wed Aug 06 11:34:09 GMT+03:00 2025","","Obilet.Base","Obilet.Base","titleControl"
+"Sayfaya giris yapacak","7851","setup()","","Wed Aug 06 10:02:58 GMT+03:00 2025","passed","Wed Aug 06 10:03:06 GMT+03:00 2025","","Obilet.Base","Obilet.Base","setup"
+"Sayfaya giris yapacak","7503","setUp()","","Wed Aug 06 11:33:56 GMT+03:00 2025","passed","Wed Aug 06 11:34:03 GMT+03:00 2025","","Obilet.Base","Obilet.Base","setUp"
+"Tarayıcı kapatılıyor","13","tearDown()","","Wed Aug 06 11:33:56 GMT+03:00 2025","passed","Wed Aug 06 11:33:56 GMT+03:00 2025","","Obilet.Base","Obilet.Base","tearDown"
