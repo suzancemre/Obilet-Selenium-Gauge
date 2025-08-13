@@ -17,8 +17,8 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <junit.jupiter.version>5.9.3</junit.jupiter.version>
-        <selenium.version>4.10.0</selenium.version>
+        <junit.jupiter.version>5.10.2</junit.jupiter.version>
+        <selenium.version>4.23.0</selenium.version>
         <webdrivermanager.version>5.7.0</webdrivermanager.version>
         <extentreports.version>5.1.1</extentreports.version>
         <gauge.java.version>0.11.3</gauge.java.version>
