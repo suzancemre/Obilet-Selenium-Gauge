@@ -115,7 +115,6 @@
                     <arguments>
                         <argument>run</argument>
                         <argument>specs/</argument>
-                        <argument>--html-report</argument>
                     </arguments>
                 </configuration>
             </plugin>

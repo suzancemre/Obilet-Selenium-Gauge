@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="gauge-test" />
         <module name="Trendyol" />
+        <module name="catch" />
       </profile>
     </annotationProcessing>
   </component>

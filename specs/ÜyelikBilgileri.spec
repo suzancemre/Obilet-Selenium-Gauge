@@ -1,7 +1,7 @@
-Specification Heading
+ANASAYFA
 =====================
 
-Sisteme Üye Olunur
+Anasayfada Arama Yapılır
 ----------------
 * Arama alanına kazak yazılır
 
