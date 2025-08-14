@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gauge-test" />
-        <module name="obilet" />
+        <module name="Trendyol" />
       </profile>
     </annotationProcessing>
   </component>

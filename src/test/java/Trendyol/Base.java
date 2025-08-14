@@ -1,4 +1,4 @@
-package Obilet;
+package Trendyol;
 
 import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.BeforeScenario;
@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
-  public static WebDriver webdriver;
+    public static WebDriver webdriver;
 
     @BeforeScenario
     public void setup() {
@@ -27,5 +27,4 @@ public class Base {
             webdriver.quit();
         }
     }
-
 }

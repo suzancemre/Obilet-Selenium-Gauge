@@ -1,9 +1,8 @@
 package BaseStep;
 
 import ElementSource.Element;
-import Obilet.Base;
+import Trendyol.Base;
 import com.thoughtworks.gauge.Step;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
