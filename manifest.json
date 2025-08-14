@@ -4,5 +4,6 @@
     "html-report",
     "xml-report"
   ],
-  "EnvironmentDir": ""
+  "EnvironmentDir": "",
+  "StepImplementationDirs": ["src/test/java/BaseStep"]
 }
