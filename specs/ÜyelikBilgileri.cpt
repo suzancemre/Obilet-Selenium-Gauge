@@ -1,13 +1,11 @@
  Kullanıcı İşlemleri
 
-# Üye giriş butonuna tıklanır
-* "uyeGirisi" elementine tıklanır
+# Arama alanına kazak yazılır
+* Popup varsa kapat
+* "arama" elementi bulana kadar bekle
+* "arama" tıkla
+* "arama" elementine tıkla "kazak" yazini gonder
 
-# Üyelik pop-up'ı açılır
-* "popupUyeGirisi" elementi ekranda var mı
-
-# Üye ol butonuna tıklanır
-* "uyeOl" elementine tıklanır
 
 
 

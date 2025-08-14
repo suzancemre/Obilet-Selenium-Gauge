@@ -20,7 +20,7 @@ import java.util.NoSuchElementException;
 
 public class Element {
     private WebDriver webdriver;
-    private Map<String, Locator> elements;
+    public Map<String, Locator> elements;
     private static final Logger logger = LoggerFactory.getLogger(BaseStep.class);
 
 

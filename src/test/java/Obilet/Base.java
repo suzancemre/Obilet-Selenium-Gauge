@@ -9,12 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
-    protected WebDriver webdriver;
+  public static WebDriver webdriver;
 
     @BeforeScenario
     public void setup() {
         WebDriverManager.chromedriver().setup();
         webdriver = new ChromeDriver();
+        webdriver.get("https://www.trendyol.com/");
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); // İsteğe bağlı: gizli bekleme
     }
