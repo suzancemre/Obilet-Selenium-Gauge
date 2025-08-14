@@ -107,19 +107,19 @@
                         <goals>
                             <goal>exec</goal>
                         </goals>
-                        <configuration>
-                            <executable>gauge</executable>
-                            <workingDirectory>${project.basedir}</workingDirectory>
-                            <arguments>
-                                <argument>run</argument>
-                                <argument>specs</argument>
-                                <argument>--step_implementation_dirs=src/test/java</argument>
-                                <argument>--html-report</argument>
-                            </arguments>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <executable>/usr/local/bin/gauge</executable>
+                    <workingDirectory>${project.basedir}</workingDirectory>
+                    <arguments>
+                        <argument>run</argument>
+                        <argument>specs/</argument>
+                        <argument>--html-report</argument>
+                    </arguments>
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
