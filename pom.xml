@@ -2,43 +2,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>org.example</groupId>
-    <artifactId>catch</artifactId>
+    <groupId>com.trendyol</groupId>
+    <artifactId>trendyol-selenium-gauge</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>trendyol</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <junit.jupiter.version>5.10.0</junit.jupiter.version>
-        <selenium.version>4.23.0</selenium.version>
-        <webdrivermanager.version>5.5.0</webdrivermanager.version>
-        <extentreports.version>5.0.9</extentreports.version>
-        <gauge.java.version>0.12.0</gauge.java.version>
+        <gauge.version>0.12.0</gauge.version>
+        <selenium.version>4.21.0</selenium.version>
     </properties>
 
     <dependencies>
-        <!-- JUnit 5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -46,31 +24,32 @@
             <version>${selenium.version}</version>
         </dependency>
 
-        <!-- WebDriverManager -->
+        <!-- WebDriver Manager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-        </dependency>
-
-        <!-- ExtentReports -->
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>${extentreports.version}</version>
+            <version>5.8.0</version>
         </dependency>
 
         <!-- Gauge Java -->
         <dependency>
             <groupId>com.thoughtworks.gauge</groupId>
             <artifactId>gauge-java</artifactId>
-            <version>${gauge.java.version}</version>
+            <version>${gauge.version}</version>
+        </dependency>
+
+        <!-- Test Assertions -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.25.3</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler Plugin -->
+            <!-- Maven Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -78,52 +57,30 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>1.18.30</version>
-                        </path>
-                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
 
-            <!-- Surefire Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
-                </configuration>
-            </plugin>
-
-            <!-- Exec Maven Plugin: Gauge çalıştırmak için -->
+            <!-- Maven Exec Plugin for Gauge -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <executions>
                     <execution>
-                        <id>run-gauge-specs</id>
-                        <phase>compile</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
-                        <configuration>
-                            <!-- Jenkins PATH’te gauge yoksa tam yol belirt -->
-                            <executable>/usr/local/bin/gauge</executable>
-                            <arguments>
-                                <argument>run</argument>
-                                <argument>specs</argument>
-                            </arguments>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <executable>gauge</executable>
+                    <arguments>
+                        <argument>run</argument>
+                        <argument>specs</argument>
+                    </arguments>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>
