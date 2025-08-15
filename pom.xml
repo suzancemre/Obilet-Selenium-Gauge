@@ -108,11 +108,14 @@
                 <version>3.1.0</version>
                 <executions>
                     <execution>
+                        <id>run-gauge-specs</id>
+                        <phase>compile</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>gauge</executable>
+                            <!-- Jenkins PATH’te gauge yoksa tam yol belirt -->
+                            <executable>/usr/local/bin/gauge</executable>
                             <arguments>
                                 <argument>run</argument>
                                 <argument>specs</argument>
