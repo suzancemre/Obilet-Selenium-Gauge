@@ -121,8 +121,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- Gauge Maven Plugin -->
         </plugins>
     </build>
 </project>
